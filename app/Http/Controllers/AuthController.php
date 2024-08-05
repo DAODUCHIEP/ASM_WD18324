@@ -33,7 +33,7 @@ class AuthController extends Controller
             'message' => 'Email hoac password k dung'
         ]);
     }
-        
+
     }
 
 
@@ -63,7 +63,7 @@ class AuthController extends Controller
                 'password' => hash::make($req->password),
                 'address' => $req->address,
                 'phone' => $req->phone
-                
+
             ];
             $newUser = User::create($data);
 
@@ -72,4 +72,6 @@ class AuthController extends Controller
             ]);
         }
     }
+
+
 }

@@ -50,7 +50,7 @@ Chỉnh sửa sản phẩm
         </div>
 
 
-        <button class=" btn btn-success">Thêm mới</button>
+        <button class=" btn btn-success">Sửa</button>
 
     </form>
 

@@ -18,11 +18,17 @@ Thêm mới sản phẩm
 
 @section('content')
 <div class="p-4" style="min-height: 800px;">
+    @if (session('message'))
+            <p class="text-danger">{{session('message')}}</p>
+        @endif
     <form action="{{route('admin.product.addPostProduct')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="nameSP">Tên sản phẩm</label>
             <input type="text" name="nameSP" class="form-control">
+            @error('nameSP')
+                <p class="text-danger">{{$message}}</p>
+            @enderror <br>
         </div>
         <div class="mb-3">
             <label for="imageSP">Ảnh sản phẩm</label>
@@ -40,10 +46,16 @@ Thêm mới sản phẩm
         <div class="mb-3">
             <label for="nameSP">Giá sản phẩm</label>
             <input type="text" name="priceSP" class="form-control">
+            @error('priceSP')
+                <p class="text-danger">{{$message}}</p>
+            @enderror <br>
         </div>
         <div class="mb-3">
             <label for="nameSP">Mô tả</label>
             <input type="text" name="descriptionSP" class="form-control">
+            @error('descriptionSP')
+                <p class="text-danger">{{$message}}</p>
+            @enderror <br>
         </div>
 
 

@@ -47,7 +47,7 @@
             </div>
             <button class="btn btn-success">Đăn Ký</button>
 
-            <a href="{{route('login')}}">Đăng Nhập</a>
+            <a class="btn btn-success" href="{{route('login')}}">Đăng Nhập</a>
         </form>
     </div>
 

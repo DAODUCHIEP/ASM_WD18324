@@ -32,6 +32,16 @@ class ProductController extends Controller
     }
 
     public function addPostProduct(Request $req){
+        $req->validate([
+            'nameSP' => 'required',
+            'descriptionSP' => 'required',
+            'priceSP' => 'required|numeric',
+        ],[
+            'nameSP.required' => 'Tên sản phẩm không được để trống',
+            'descriptionSP.required' => 'Mô tả sản phẩm không được để trống',
+            'priceSP.required' => 'Giá sản phẩm không được để trống',
+            'priceSP.numeric' => 'Giá sản phẩm phải là chữ số',
+        ]);
         $linkImage = '';
         if($req->hasFile('imageSP')){
             $image = $req->file('imageSP');
@@ -52,13 +62,13 @@ class ProductController extends Controller
        Product::create($data);
 
         return redirect()->route('admin.product.listProduct');
-        
+
     }
 
     public function deleteProduct($id){
         $deleteProduct = Product::find($id);
         $deleteProduct->delete();
-        return redirect()->route('admin.product.listProduct')->with('success', 'Product deleted successfully');
+        return redirect()->route('admin.product.listProduct')->with('success', 'Xóa thành công');
     }
 
     public function detailProduct($idProduct){
@@ -84,7 +94,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($idProduct);
 
-        $linkImage = $product->image; 
+        $linkImage = $product->image;
         if ($req->hasFile('imageSP')) {
             $image = $req->file('imageSP');
             $newName = time() . '.' . $image->getClientOriginalExtension();

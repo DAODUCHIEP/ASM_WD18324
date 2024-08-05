@@ -7,11 +7,11 @@
         <a href="{{route('admin.product.listProduct')}}" class="list-group-item">
             Quản lý sản phẩm
         </a>
-        <a href="#" class="list-group-item ">
-            Báo cáo
+        <a href="{{route('admin.category.listCategory')}}" class="list-group-item ">
+            Quản lý danh mục
         </a>
-        <a href="#" class="list-group-item ">
-            Thống kê
+        <a href="{{route('users.listPostUser')}}" class="list-group-item ">
+            Quản lý User
         </a>
     </div>
 </div>

@@ -39,7 +39,7 @@ Danh sách sản phẩm
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger"
-                            onclick="return confirm('Are you sure you want to delete this product?');">Xóa</button>
+                            onclick="return confirm('Bạn có muốn xóa không?');">Xóa</button>
 
                         <a class="btn btn-info" href="{{route('admin.product.detailProduct',$value->id)}}">Chi tiết sản
                             phẩm</a>

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
 </head>
 
@@ -15,7 +15,7 @@
     <div class="container mt-5">
         <h4>Đăn Nhập</h4>
         @if (session('message'))
-        <p class="text-danger">{{session('message')}}</p>
+            <p class="text-danger">{{ session('message') }}</p>
         @endif
         <form action="{{ route('postLogin') }}" method="post">
             @csrf
@@ -31,12 +31,12 @@
             </div>
             <button class="btn btn-success">Đăn Nhập</button>
 
-            <a href="{{ route('register') }}">Đăng Ký</a>
+            <a class="btn btn-success" href="{{ route('register') }}">Đăng Ký</a>
         </form>
     </div>
 
 
-    <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 
 </html>
